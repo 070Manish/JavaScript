@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .red-color
+        {
+            color: red;
+        }
+        .pink-color
+        {
+            color: pink;
+        }
+        .underline
+        {
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+<body>
+    <nav class="block">
+        <p class="paragraph">Welcome to my website</p>
+    </nav>
+    <nav >
+        <p class="paragraph">Welcome to my India</p>
+    </nav>
+    <div class="block">
+        <h4>Hey There, My name is 
+            <span id="username">Manish Nagpure</span>
+        </h4>
+
+        <p class="block">Here is a code for You</p>
+        <pre><code>console.log("Hey There")</code></pre>
+    </div>
+    
+    <script>
+        //Agr mujhe kisi class ko select krna hai to apn aishe krnge
+        //1. way was query selector . use kro
+        
+        //2.way-> ye multiple elements select krega
+        const elements = document.getElementsByClassName("block");//all block select kr rh
+        for(let i=0; i<elements.length; i++)
+        {
+            //console.log(elements.item(i));->jo jo tag ki class="block" hai vo dikahyega console tab me
+            elements.item(i).style.background = "blue";//jis jis tag me class="block" hoga sb blue ho jayega 
+            //this how we can select multiple elements
+        }
+    </script>
+</body>
+</html>

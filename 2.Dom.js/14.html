@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .red-color
+        {
+            color: red;
+        }
+        .pink-color
+        {
+            color: pink;
+        }
+        .underline
+        {
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+<body>
+    <nav class="block">
+        <p class="paragraph">Welcome to my website</p>
+    </nav>
+    <div class="block">
+        <h4>Hey There, My name is 
+            <span class="pink-color" id="username">Manish Nagpure</span>
+        </h4>
+        <p class="paragraph" id="code">Here is a code for You</p>
+        <pre><code>console.log("Hey There")</code></pre>
+    </div>
+    
+    <script>
+        const el = document.getElementById("username");
+        //console.log(el.innerText);->ye username ke andar ky likha hai vo batayega
+        //el.innerText = "Jhon Doe";//Manish Nagpure ko John Doe kr dega
+        //el.classList.add("red-color","underline");//style tag ke classes add kr rh apn
+        //console.log(el.classList);//ismee batayega konsi classes apn use kiye yhai
+
+        //el.classList.remove("pink-color");//it will remove class pinkcolor where id="username" 
+        
+        //inLine Style like ex: style="color: blue"
+        const el1 = document.getElementById("code");
+        el1.style.textDecoration = "undeline";
+        el1.style.color = "tomato";// ye sb add ho chuka hai HTML me whre id = "code" check in console tab
+        console.log(el1.parentElement.parentElement);//parent tag access kr skte nd isme bhi change kr skte
+        el1.parentElement.style.background = "grey";
+        el1.remove();//we deleted element where id = "code";
+    </script>
+</body>
+</html>

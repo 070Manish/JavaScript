@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .red-color
+        {
+            color: red;
+        }
+        .pink-color
+        {
+            color: pink;
+        }
+        .underline
+        {
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+<body>
+    <nav id="name-block">
+        <p class="paragraph">Welcome to my website</p>
+    </nav>
+    <nav >
+        <p class="paragraph">Welcome to my India</p>
+    </nav>
+    <div class="block">
+        <h4>Hey There, My name is 
+            <span id="username">Manish Nagpure</span>
+        </h4>
+
+        <p class="block">Here is a code for You</p>
+        <pre><code>console.log("Hey There")</code></pre>
+    </div>
+    
+ 
+    <button onclick="console.log('Hey I am Clicked')">Click Me 1</button><br>
+    <button onclick="alert('Hey I am Clicked')">Click Me 2</button><br><br>
+
+    <button onclick="handleButtonClick()">Click and Alert 3</button><br><br>
+
+    <button id="clickButton">Click by ID 4</button><br><br>
+
+    <button id="maglu">Click by ID 5</button><br><br>
+
+    <button id="update">Changed</button><br><br>
+
+
+
+    <script>
+        //EventListeners->hum kisi trh ke event ko listen kr rh like watching some kind of event.
+        //Event-> like clicking on button is event, loading a page is event.
+
+        //above was 1 way withou function
+
+        //2nd way-> function bana kr 
+        function handleButtonClick()
+        {
+            console.log("That Button is Clicked");
+            alert("Hey I am Clicked");
+        }
+
+        //3rd way most prefer by id
+        //3.1
+        const el  = document.getElementById("clickButton");
+        el.onclick = function()
+        {
+            console.log("Hey I am clicked");
+            alert("Clicked by ID");
+        }//but isme dikkat hai override ki jo llatest wala hai vo run hoga
+
+        //3.2->most Preferred way
+        const el1  = document.getElementById("maglu");
+        function doSomething()
+        {
+            console.log("I am Clicked");
+            alert("Hacked");
+        }
+        el1.addEventListener("click", doSomething);
+
+        /*or both are same
+        el1.addEvetListener("click", function{
+            console.log("I am Clicked");
+            alert("Hacked");
+        })
+
+        */
+
+        //Assignment -> jb bhi mai click Kru on "Update Button" it should update text colour to Red colour where id="name-block"
+        const nameBlock = document.getElementById("name-block");
+        const el2 = document.getElementById("update");
+        el2.addEventListener("click", function()//toggling effect
+        {
+            if(nameBlock.style.color === "red")
+            {
+                nameBlock.style.color = "blue";
+            }
+            else
+            {
+                nameBlock.style.color = "red";
+            }
+        });
+
+       
+
+    </script>
+
+    <script>
+        //Assigmnet-> aisha kch krna hai hume like jis tag ke part pr click krnge vo DOM se remove ho jana chahiye
+        const allChildren = document.querySelector("body").children;
+
+        for(let i=0;i<allChildren.length;i++)
+        {
+            allChildren.item(i).addEventListener("click", function()
+            {
+                allChildren.item(i).remove();
+            })
+        }
+    </script>
+</body>
+</html>
